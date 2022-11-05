@@ -60,11 +60,7 @@ def run_predict_pipeline(predict_pipeline_params: PredictPipelineParams) -> str:
     inference_pipeline = create_inference_pipeline(model)
 
     predicts = predict_model(inference_pipeline, data)
-
-    name_of_new_dir = "/".join(predict_pipeline_params.predict_path.split("/")[:-1])
-    os.makedirs(name_of_new_dir, exist_ok=True)
-    np.savetxt(predict_pipeline_params.predict_path, predicts, delimiter=",", fmt="%d")
-
+    save_preds_to_file(predicts, predict_pipeline_params)
     logger.info(f"Finish predict {predict_pipeline_params.model_type}")
 
     return predict_pipeline_params.predict_path
@@ -79,6 +75,12 @@ def get_model_path(model_type: str, logger: logging.Logger) -> str:
         logger.error(f"No such pretrained model: {model_type}")
         raise FileNotFoundError
     return model_path
+
+
+def save_preds_to_file(predicts: np.ndarray, predict_pipeline_params: PredictPipelineParams):
+    name_of_new_dir = "/".join(predict_pipeline_params.predict_path.split("/")[:-1])
+    os.makedirs(name_of_new_dir, exist_ok=True)
+    np.savetxt(predict_pipeline_params.predict_path, predicts, delimiter=",", fmt="%d")
 
 
 @click.command(name="predict_pipeline")

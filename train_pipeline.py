@@ -56,11 +56,8 @@ def run_train_pipeline(training_pipeline_params: TrainingPipelineParams) -> Tupl
     train_df, val_df = train_test_split(
         data, test_size=splitting_params.val_size, random_state=splitting_params.random_state)
 
-    train_features = train_df.drop(training_pipeline_params.feature_params.target_name, axis=1)
-    train_target = train_df[training_pipeline_params.feature_params.target_name]
-
-    val_features = val_df.drop(training_pipeline_params.feature_params.target_name, axis=1)
-    val_target = val_df[training_pipeline_params.feature_params.target_name]
+    train_features, train_target = split_x_y(train_df, training_pipeline_params.feature_params.target_name)
+    val_features, val_target = split_x_y(val_df, training_pipeline_params.feature_params.target_name)
 
     logger.info(f"train_df.shape is {train_features.shape}")
     logger.info(f"val_df.shape is {val_features.shape}")
@@ -85,6 +82,19 @@ def run_train_pipeline(training_pipeline_params: TrainingPipelineParams) -> Tupl
 
     logger.info(f"Finish train {training_pipeline_params.train_params.model_type}")
     return path_to_model, metrics
+
+
+def split_x_y(df: pd.DataFrame, target_name: str) -> Tuple[pd.DataFrame, pd.Series]:
+    """
+    Split dataset to X, y parts
+    :param df: full dataframe
+    :param target_name: name of target column
+    :return:
+    """
+
+    features = df.drop(target_name, axis=1)
+    target = df[target_name]
+    return features, target
 
 
 @click.command(name="train_pipeline")
