@@ -17,3 +17,36 @@
 2022-11-02 23:51:29,534	INFO	Train metrics: {'accuracy': 1.0, 'precision': 1.0, 'recall': 1.0}
 2022-11-02 23:51:29,540	INFO	Validation metrics: {'accuracy': 0.6833333333333333, 'precision': 0.7142857142857143, 'recall': 0.6451612903225806}
 2022-11-02 23:51:29,549	INFO	Finish train DecisionTree
+2022-11-05 21:52:58,402	INFO	Start train pipeline with params TrainingPipelineParams(input_data_path='data/dataset.csv', output_model_path='models/tree/model.pkl', metric_path='models/tree/metrics.json', splitting_params=SplittingParams(val_size=0.2, random_state=42), train_params=TrainingParams(model_type='DecisionTree', random_state=42), feature_params=FeatureParams(target_name='condition'), log_config_file_path='configs/logger_config.yaml', log_format='log_to_file')
+2022-11-05 21:52:58,412	INFO	data.shape is (297, 14)
+2022-11-05 21:52:58,419	INFO	train_df.shape is (237, 13)
+2022-11-05 21:52:58,419	INFO	val_df.shape is (60, 13)
+2022-11-05 21:52:58,431	INFO	Train metrics: {'accuracy': 1.0, 'precision': 1.0, 'recall': 1.0}
+2022-11-05 21:52:58,437	INFO	Validation metrics: {'accuracy': 0.75, 'precision': 0.8214285714285714, 'recall': 0.696969696969697}
+2022-11-05 21:52:58,440	INFO	Finish train DecisionTree
+2022-11-05 22:32:13,814	INFO	Start train pipeline with params TrainingPipelineParams(input_data_path='data/dataset.csv', output_model_path='models/tree/model.pkl', metric_path='models/tree/metrics.json', splitting_params=SplittingParams(val_size=0.2, random_state=42), train_params=TrainingParams(model_type='DecisionTree', random_state=42), feature_params=FeatureParams(target_name='condition'), log_config_file_path='configs/logger_config.yaml', log_format='log_to_file')
+2022-11-05 22:32:13,823	INFO	data.shape is (297, 14)
+2022-11-05 22:32:13,829	INFO	train_df.shape is (237, 13)
+2022-11-05 22:32:13,829	INFO	val_df.shape is (60, 13)
+2022-11-05 22:32:13,839	INFO	Train metrics: {'accuracy': 1.0, 'precision': 1.0, 'recall': 1.0}
+2022-11-05 22:32:13,844	INFO	Validation metrics: {'accuracy': 0.7166666666666667, 'precision': 0.75, 'recall': 0.6774193548387096}
+2022-11-05 22:32:13,846	INFO	Finish train DecisionTree
+2022-11-05 22:33:27,070	INFO	Start train pipeline with params TrainingPipelineParams(input_data_path='data/dataset.csv', output_model_path='models/tree/model.pkl', metric_path='models/tree/metrics.json', splitting_params=SplittingParams(val_size=0.2, random_state=42), train_params=TrainingParams(model_type='DecisionTree', random_state=42), feature_params=FeatureParams(target_name='condition'), log_config_file_path='configs/logger_config.yaml', log_format='log_to_file')
+2022-11-05 22:33:27,078	INFO	data.shape is (297, 14)
+2022-11-05 22:33:27,084	INFO	train_df.shape is (237, 13)
+2022-11-05 22:33:27,084	INFO	val_df.shape is (60, 13)
+2022-11-05 22:33:27,094	INFO	Train metrics: {'accuracy': 1.0, 'precision': 1.0, 'recall': 1.0}
+2022-11-05 22:33:27,098	INFO	Validation metrics: {'accuracy': 0.7, 'precision': 0.75, 'recall': 0.65625}
+2022-11-05 22:33:27,100	INFO	Finish train DecisionTree
+2022-11-05 22:38:30,795	INFO	Start predict pipeline with params PredictPipelineParams(input_data_path='data/dataset.csv', predict_path='models/predictions/metrics.json', model_type='DecisionTree', feature_params=FeatureParams(target_name='condition'), log_config_file_path='configs/logger_config.yaml', log_format='log_to_file')
+2022-11-05 22:38:30,804	INFO	data.shape is (297, 14)
+2022-11-05 22:38:30,814	INFO	Finish predict DecisionTree
+2022-11-05 22:39:20,692	INFO	Start predict pipeline with params PredictPipelineParams(input_data_path='data/dataset.csv', predict_path='models/predictions/predict.txt', model_type='DecisionTree', feature_params=FeatureParams(target_name='condition'), log_config_file_path='configs/logger_config.yaml', log_format='log_to_file')
+2022-11-05 22:39:20,699	INFO	data.shape is (297, 14)
+2022-11-05 22:39:20,706	INFO	Finish predict DecisionTree
+2022-11-05 22:41:42,373	INFO	Start predict pipeline with params PredictPipelineParams(input_data_path='data/dataset.csv', predict_path='models/predictions/predict.csv', model_type='DecisionTree', feature_params=FeatureParams(target_name='condition'), log_config_file_path='configs/logger_config.yaml', log_format='log_to_file')
+2022-11-05 22:41:42,379	INFO	data.shape is (297, 14)
+2022-11-05 22:41:42,389	INFO	Finish predict DecisionTree
+2022-11-05 22:42:53,850	INFO	Start predict pipeline with params PredictPipelineParams(input_data_path='data/dataset.csv', predict_path='models/predictions/predict.csv', model_type='DecisionTree', feature_params=FeatureParams(target_name='condition'), log_config_file_path='configs/logger_config.yaml', log_format='log_to_file')
+2022-11-05 22:42:53,858	INFO	data.shape is (297, 14)
+2022-11-05 22:42:53,864	INFO	Finish predict DecisionTree

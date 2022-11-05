@@ -3,13 +3,11 @@ File which runs all train pipline
 """
 
 import json
-import logging.config
 import os
 from typing import Dict, Tuple
 
 import click
 import pandas as pd
-import yaml
 from sklearn.model_selection import train_test_split
 
 from data.dataclass.train_pipeline_params import (
@@ -24,6 +22,8 @@ from models.model_fit_predict import (
     create_inference_pipeline,
     serialize_model
 )
+
+from logs.create_logger import create_logger
 
 
 def train_pipeline(config_path: str) -> Tuple[str, Dict[str, float]]:
@@ -85,23 +85,6 @@ def run_train_pipeline(training_pipeline_params: TrainingPipelineParams) -> Tupl
 
     logger.info(f"Finish train {training_pipeline_params.train_params.model_type}")
     return path_to_model, metrics
-
-
-def create_logger(logger_config_path: str, logger_format: str) -> logging.Logger:
-    """
-    Function create logger with file handler
-    :param logger_format: file or stream handler
-    :param logger_config_path: path to output file, given in log_reg_train_config.yaml
-    :return: created logger
-    """
-
-    with open(logger_config_path, 'r') as file:
-        config = yaml.safe_load(file)
-
-    logging.config.dictConfig(config)
-    logger = logging.getLogger(logger_format)
-
-    return logger
 
 
 @click.command(name="train_pipeline")
