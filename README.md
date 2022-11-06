@@ -20,5 +20,5 @@
 
 **Predict pipeline** `python3 predict_pipeline.py ./configs/predict_config.yaml`
 
-**Tests** python3 -m unittest ./tests/{predict/train}_pipeline_test.py
+**Tests** `python3 -m unittest ./tests/{predict/train}_pipeline_test.py`
 
