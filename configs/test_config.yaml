@@ -1,0 +1,2 @@
+log_config_file_path: "configs/logger_config.yaml"
+log_format: "log_to_file"

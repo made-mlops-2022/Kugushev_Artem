@@ -1,0 +1,25 @@
+version: 1
+formatters:
+  file_formatter:
+    format: "%(asctime)s\t%(levelname)s\t%(message)s"
+  stream_formatter:
+    format: "%(asctime)s\t%(levelname)s\t%(message)s"
+handlers:
+  file:
+    level: "DEBUG"
+    class: "logging.FileHandler"
+    filename: "logs/full_logs.log"
+    formatter: "file_formatter"
+  stream:
+    level: "DEBUG"
+    class: "logging.StreamHandler"
+    formatter: "stream_formatter"
+loggers:
+    log_to_file:
+      level: "DEBUG"
+      handlers:
+        - "file"
+    log_to_stdout:
+      level: "DEBUG"
+      handlers:
+        - "stream"

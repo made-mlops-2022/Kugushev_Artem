@@ -1,0 +1,7 @@
+input_data_path: "data/dataset.csv"
+predict_path: "models/predictions/test_predict.csv"
+model_type: "DecisionTree"
+feature_params:
+  target_name: "condition"
+log_config_file_path: "configs/logger_config.yaml"
+log_format: "log_to_file"

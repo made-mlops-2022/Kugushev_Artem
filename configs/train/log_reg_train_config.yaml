@@ -1,0 +1,12 @@
+input_data_path: "data/dataset.csv"
+output_model_path: "models/log_reg/model.pkl"
+metric_path: "models/log_reg/metrics.json"
+splitting_params:
+  val_size: 0.2
+  random_state: 42
+train_params:
+  model_type: "LogisticRegression"
+feature_params:
+  target_name: "condition"
+log_config_file_path: "configs/logger_config.yaml"
+log_format: "log_to_file"
