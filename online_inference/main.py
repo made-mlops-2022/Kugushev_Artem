@@ -19,9 +19,10 @@ def load_model():
 
 @app.post("/predict")
 async def predict(predict_input: PredictInput):
-    data = pd.DataFrame([predict_input.dict()])
+    data = pd.DataFrame.from_records([predict_input.dict()])
     prediction = model.predict(data)
-    return prediction
+    response = "disease" if prediction[0] else 'no disease'
+    return {"prediction": response}
 
 
 @app.get('/health')

@@ -19,27 +19,27 @@ class PredictInput(BaseModel):
     thal: Literal[0, 1, 2]
 
     @classmethod
-    def check_valid_value(cls, value, max_val, name):
+    def is_valid(cls, value, max_val, name):
         if value > max_val:
             raise ValueError(f'{name} should be in 1-{max_val}]')
         return value
 
     @validator("age")
     def is_age_valid(cls, value):
-        return cls.check_valid_value(value, 100, "age")
+        return cls.is_valid(value, 100, "age")
 
     @validator("trestbps")
     def is_trestbps_valid(cls, value):
-        return cls.check_valid_value(value, 300, "trestbps")
+        return cls.is_valid(value, 300, "trestbps")
 
     @validator('chol')
     def is_chol_valid(cls, value):
-        return cls.check_valid_value(value, 500, "chol")
+        return cls.is_valid(value, 500, "chol")
 
     @validator('thalach')
     def is_thalach_valid(cls, value):
-        return cls.check_valid_value(value, 300, "thalach")
+        return cls.is_valid(value, 300, "thalach")
 
     @validator('oldpeak')
     def is_oldpeak_valid(cls, value):
-        return cls.check_valid_value(value, 10, "oldpeak")
+        return cls.is_valid(value, 10, "oldpeak")

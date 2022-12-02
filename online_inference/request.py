@@ -19,7 +19,6 @@ def main():
         response = requests.post(
             url='http://0.0.0.0:8888/predict',
             data=json.dumps(request))
-
         logger.info(f'Request stats code: {response.status_code}')
         logger.info(f'Response: {response}')
     logger.info("Finish prediction.")
