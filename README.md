@@ -25,10 +25,13 @@
 ## HW2
 
 *Build from online_reference/* `docker build -t artemkgushev/homework2 .`
+
 *Pull from [dockerHub](https://hub.docker.com/repository/docker/artemkgushev/homework2)* `docker pull artemkgushev/homework2`
+
 *Run* `docker run -d -p 8888:8888 artemkgushev/homework2`
 
 *Run request in docker terminal* `python3 -m request`
+
 *Run test from docker terminal* `python3 -m pytest test.py`
 
 Работоспособность predict проверялась с помощью Postman.
