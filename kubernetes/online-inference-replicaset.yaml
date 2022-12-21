@@ -5,7 +5,7 @@ metadata:
    labels:
      app: online-inference-replicaset
 spec:
-   replicas: 4
+   replicas: 3
    selector:
      matchLabels:
        app: online-inference
